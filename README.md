@@ -56,8 +56,8 @@
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
 |car_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user, optional: true
 - belongs_to :car, optional: true
