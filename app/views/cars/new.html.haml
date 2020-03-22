@@ -1,0 +1,7 @@
+= form_for @car do |f|
+  = f.label :name, "テキスト"
+  = f.text_area :name, placeholder: "ここに文字を入力してね！"
+  = f.fields_for :images do |c|
+    = c.label :image_car
+    = c.file_field :image_car
+    = f.submit "投稿"
