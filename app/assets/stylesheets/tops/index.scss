@@ -17,7 +17,7 @@
     }
   }
   &__2 {
-    height: 250px;
+    height: 300px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -39,6 +39,43 @@
         &:hover {
           background-color: rgb(110, 206, 238);
         }
+      }
+    }
+  }
+  &__3 {
+    height: 550px;
+    width: 100%;
+    &__contents {
+      text-align: center;
+      margin-bottom: 50px;
+      h2 {
+        font-size: 50px;
+      }
+        
+      p {
+        font-size: 20px;
+      }
+    }
+    &__description {
+      display: flex;
+      
+      justify-content: center;
+      align-items: center;
+      &__box {
+        h3 {
+          text-align: center;
+        }
+        img {
+          height: 150px;
+          width: auto;
+        }
+        h5 {
+        
+        }
+      }
+      h4 {
+        font-size: 30px;
+        margin: 0 20px;
       }
     }
   }
