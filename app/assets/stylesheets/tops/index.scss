@@ -17,7 +17,7 @@
     }
   }
   &__2 {
-    height: 300px;
+    height: 400px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -43,11 +43,11 @@
     }
   }
   &__3 {
-    height: 550px;
+    height: 600px;
     width: 100%;
     &__contents {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 70px;
       h2 {
         font-size: 50px;
       }
@@ -77,6 +77,22 @@
         align-items: center;
         font-size: 30px;
         margin: 0 20px;
+      }
+    }
+  }
+  &__4 {
+    background-image: image-url("1550804701425_w141z0l7hc7qhxldn8qqcxq9.jpg");
+    height: 550px;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    &__contents {
+      h1 {
+        font-size: 50px;
+        color: white;
       }
     }
   }
