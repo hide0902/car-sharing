@@ -1,2 +1,11 @@
-= link_to "投稿", new_car_path
-= link_to "ログイン", new_user_session_path
+.main
+  .main__1
+    .main__1__contents
+      %h1
+        カーシェアを通して生まれた
+        %br
+        想い・感動をお届けします
+  .main__2
+    .main__2__cars
+      = link_to "車を探す",root_path ,class: "main__2__cars__box"
+      = link_to "車を投稿する", new_car_path ,class: "main__2__cars__box"

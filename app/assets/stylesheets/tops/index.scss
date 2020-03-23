@@ -1,0 +1,45 @@
+.main {
+  width: 100%;
+  &__1 {
+    background-image: image-url("4e8169b30b4914411067244aa51b9f6c_t.jpeg");
+    height: 550px;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    &__contents {
+      h1 {
+        font-size: 50px;
+        color: white;
+      }
+    }
+  }
+  &__2 {
+    height: 250px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__cars {
+      display: flex;
+      &__box {
+        height: 100px;
+        width: 300px;
+        background-color: #00BFFF;
+        margin-right: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        text-decoration: none;
+        color: white;
+        font-size: 30px;
+        &:hover {
+          background-color: rgb(110, 206, 238);
+        }
+      }
+    }
+  }
+}
