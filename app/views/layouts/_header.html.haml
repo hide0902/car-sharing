@@ -5,7 +5,6 @@
     .header__box__user-box
       %ul
         - if user_signed_in?
-          %li= link_to "投稿", new_car_path, class: "header__box__user-box__user"
           %li= link_to "マイページ", "/users/#{current_user.id}", class: "header__box__user-box__user"
           %li= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__box__user-box__user"
         - else
