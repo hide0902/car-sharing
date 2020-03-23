@@ -1,0 +1,40 @@
+.header {
+  height: 70px;
+  width: 100%;
+  background-color: rgb(75, 67, 67);
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    &__title-box {
+      padding-left: 120px;
+      &__title {
+        font-size: 30px;
+        text-decoration: none;
+        color: white;
+        &:hover{
+          border-bottom: solid 1px white;
+        }
+      }
+    }
+    &__user-box {
+      padding-right: 20px;
+      padding-top: 10px;
+      ul {
+        li {
+          display: inline-block;
+          font-size: 15px;
+          padding-right: 15px;
+          
+          a {
+            color: white;
+            text-decoration: none;
+            &:hover{
+              border-bottom: solid 1px white;
+            }
+          } 
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.footer {
+  text-align: center;
+  color: white;
+  background-color: #272727;
+  &__box {
+    height: 90px;
+    width: 100%;
+    padding-top: 10px;
+    h1 {
+      font-size: 22px;
+      a {
+        text-decoration: none;
+        color: white;
+        &:hover{
+          border-bottom: solid 1px white;
+        }
+      }
+    }
+    ul {
+      padding-top: 15px;
+      li {
+        padding-right: 35px;
+        display: inline-block;
+        
+        a {
+          text-decoration: none;
+          color: white;
+          &:hover{
+            border-bottom: solid 1px white;
+          }
+        }
+      }
+    }
+  }
+  &__sub {
+    height: 35px;
+    width: 100%;
+  }
+}

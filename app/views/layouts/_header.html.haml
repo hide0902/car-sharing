@@ -1,0 +1,13 @@
+.header
+  .header__box
+    .header__box__title-box
+      = link_to "Car Sharing", root_path, class: "header__box__title-box__title"
+    .header__box__user-box
+      %ul
+        - if user_signed_in?
+          %li= link_to "投稿", new_car_path, class: "header__box__user-box__user"
+          %li= link_to "マイページ", "/users/#{current_user.id}", class: "header__box__user-box__user"
+          %li= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__box__user-box__user"
+        - else
+          %li= link_to "ログイン", new_user_session_path, class: "header__box__user-box__user"
+          %li= link_to "新規ユーザー登録", new_user_registration_path, class: "header__box__user-box__user"
