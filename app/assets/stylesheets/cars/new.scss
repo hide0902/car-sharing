@@ -1,0 +1,37 @@
+.car-new {
+  &__box {
+    background-color: rgb(240, 236, 236);
+    width: 1000px;
+    margin: auto;
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      padding: 10px 0;
+    }
+    p {
+      font-size: 20px;
+      
+    }
+    &__in {
+      
+      &__image {
+        height: 70px;
+        p {
+          padding-left: 50px;
+        }
+        &__field-box {
+          text-align: center;
+          
+        }
+      }
+      &__car-text {
+        padding-left: 50px;
+        &__field {
+          width: calc(100vw - 600px);
+          margin-bottom: 10px;
+        }
+      }
+      
+    }
+  }
+}
