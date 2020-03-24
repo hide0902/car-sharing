@@ -1,7 +1,22 @@
-= form_for @car do |f|
-  = f.label :name, "テキスト"
-  = f.text_area :name, placeholder: "ここに文字を入力してね！"
-  = f.fields_for :images do |c|
-    = c.label :image_car
-    = c.file_field :image_car
-    = f.submit "投稿"
+.car-new
+  .car-new__box
+    %h1 車の情報を入力
+    .car-new__box__in
+      = form_for @car do |f|
+        .car-new__box__in__image
+          = f.fields_for :images do |c|
+            %h1 画像を添付
+            = c.file_field :image_car, class: "car-new__box__in__image__field"
+        .car-new__box__in__car-text
+          %h1 車名
+          = f.text_field :name, placeholder: "車名を入力", class: "car-new__box__in__car-text"
+        .car-new__box__in__car-text
+          %h1 メーカー
+          = f.text_field :maker, placeholder: "メーカーを入力", class: "car-new__box__in__car-text"
+        .car-new__box__in__car-text
+          %h1 都道府県
+          = f.text_field :prefecture, placeholder: "都道府県を入力", class: "car-new__box__in__car-text"
+          %h1 市区郡
+          = f.text_field :city, placeholder: "市区郡を入力", class: "car-new__box__in__car-text"
+        .car-new__box__in__submit
+          = f.submit "投稿"
