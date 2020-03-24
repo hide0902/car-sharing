@@ -5,38 +5,39 @@
       = form_for @car do |f|
         .car-new__box__in__image
           = f.fields_for :images do |c|
-            %h1 画像を添付
-            = c.file_field :image_car, class: "car-new__box__in__image__field"
+            %p 画像を添付
+            .car-new__box__in__image__field-box
+              = c.file_field :image_car, class: "car-new__box__in__image__field-box__field"
         .car-new__box__in__car-text
-          %h1 車名
-          = f.text_field :name, placeholder: "車名を入力", class: "car-new__box__in__car-text"
+          %p 車名
+          = f.text_field :name, placeholder: "車名を入力", class: "car-new__box__in__car-text__field"
         .car-new__box__in__car-text
-          %h1 メーカー
-          = f.text_field :maker, placeholder: "メーカーを入力", class: "car-new__box__in__car-text"
+          %p メーカー
+          = f.text_field :maker, placeholder: "メーカーを入力", class: "car-new__box__in__car-text__field"
         .car-new__box__in__car-select
-          %h1 期間
+          %p 期間
           = f.select :period, Car.periods.keys.to_a, {prompt: "期間を選択"}
         .car-new__box__in__car-select
-          %h1 ガソリン
+          %p ガソリン
           = f.select :gas, Car.gas.keys.to_a, {prompt: "ガソリンを選択"}
         .car-new__box__in__car-select
-          %h1 タイプ
+          %p タイプ
           = f.select :type, Car.types.keys.to_a, {prompt: "タイプを選択"}
         .car-new__box__in__car-select
-          %h1 ハンドル
+          %p ハンドル
           = f.select :handle, Car.handles.keys.to_a, {prompt: "ハンドルを選択"}
         .car-new__box__in__car-text
-          %h1 定員
-          = f.text_field :capa, placeholder: "人数を入力", class: "car-new__box__in__car-text"
+          %p 定員
+          = f.text_field :capa, placeholder: "人数を入力", class: "car-new__box__in__car-text__field"
           = f.label :capa, "人"
         .car-new__box__in__car-text
-          %h1 都道府県
-          = f.text_field :prefecture, placeholder: "都道府県を入力", class: "car-new__box__in__car-text"
-          %h1 市区郡
-          = f.text_field :city, placeholder: "市区郡を入力", class: "car-new__box__in__car-text"
+          %p 都道府県
+          = f.text_field :prefecture, placeholder: "都道府県を入力", class: "car-new__box__in__car-text__field"
+          %p 市区郡
+          = f.text_field :city, placeholder: "市区郡を入力", class: "car-new__box__in__car-text__field"
         .car-new__box__in__car-text
-          %h1 価格
+          %p 価格
           = f.label :price, "¥"
-          = f.text_field :price, placeholder: "例)10000", class: "car-new__box__in__car-text"
+          = f.text_field :price, placeholder: "例)10000", class: "car-new__box__in__car-text__field"
         .car-new__box__in__submit
           = f.submit "投稿"
