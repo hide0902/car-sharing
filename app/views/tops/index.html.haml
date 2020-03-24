@@ -6,9 +6,12 @@
         %br
         想い・感動をお届けします
   .main__2
+    .main__2__title
+      %h2 どちらをご利用ですか？
     .main__2__cars
-      = link_to "車を探す",root_path ,class: "main__2__cars__box"
-      = link_to "車を投稿する", new_car_path ,class: "main__2__cars__box"
+      .main__2__cars__contents
+        = link_to "車を探す",root_path ,class: "main__2__cars__contents__box"
+        = link_to "車を投稿する", new_car_path ,class: "main__2__cars__contents__box"
   .main__3
     .main__3__contents
       %h2 Car Sharingとは？

@@ -17,27 +17,37 @@
     }
   }
   &__2 {
-    height: 400px;
+    height: 300px;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &__cars {
-      display: flex;
-      &__box {
-        height: 100px;
-        width: 300px;
-        background-color: #00BFFF;
-        margin-right: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 40px;
-        text-decoration: none;
-        color: white;
+    &__title {
+      text-align: center;
+      h2 {
+        padding-top: 40px;
         font-size: 30px;
-        &:hover {
-          background-color: rgb(110, 206, 238);
+      }
+    }
+    &__cars {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &__contents {
+        display: flex;
+        &__box {
+          height: 100px;
+          width: 300px;
+          background-color: #00BFFF;
+          margin-right: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 40px;
+          text-decoration: none;
+          color: white;
+          font-size: 30px;
+          &:hover {
+            background-color: rgb(110, 206, 238);
+          }
         }
       }
     }
@@ -45,11 +55,13 @@
   &__3 {
     height: 600px;
     width: 100%;
+    background-color: rgb(240, 236, 236);
     &__contents {
       text-align: center;
       margin-bottom: 70px;
       h2 {
         font-size: 50px;
+        padding-top: 30px;
       }
         
       p {
