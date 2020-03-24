@@ -13,6 +13,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:name, :maker, :price, :prefecture, :city, images_attributes: [:image_car, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:car).permit(:name, :maker, :price, :period, :gas, :type, :handle, :capa, :prefecture, :city, images_attributes: [:image_car, :_destroy, :id]).merge(user_id: current_user.id)
   end
 end
