@@ -1,16 +1,54 @@
 .car-result {
+  
   &__box {
+    
     &__count {
       display: flex;
       justify-content: center;
     }
     &__cars {
       
-      &__image-box {
-        img {
-          width: 150px;
-          height: auto;
-          border-radius: 20px;
+
+      &__car-box {
+        display: flex;
+        width: 800px;
+        margin: auto;
+        margin-bottom: 20px;
+        &__image-box {
+          img {
+            width: 150px;
+            height: auto;
+            border-radius: 20px;
+          }
+        }
+        &__show-box {
+          ul {
+            background-color:rgba(175, 168, 168, 0.8);
+            display: flex;
+            height: 30px;
+            color: white;
+            li:first-child {
+              width: 120px;
+              background-color:rgba(117, 114, 114, 0.8);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            li {
+              width: 530px;
+              padding: 0 10px;
+              display: flex;
+              align-items: center;
+            }
+          }
+          &__show {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+            h1:first-child {
+              margin-right: 20px;
+            }
+          }
         }
       }
     }
