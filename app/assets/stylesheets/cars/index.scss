@@ -1,0 +1,18 @@
+.car-result {
+  &__box {
+    &__count {
+      display: flex;
+      justify-content: center;
+    }
+    &__cars {
+      
+      &__image-box {
+        img {
+          width: 150px;
+          height: auto;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}

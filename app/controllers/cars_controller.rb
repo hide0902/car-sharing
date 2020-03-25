@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
   def index
+    # binding.pry
     @search = Car.ransack(params[:q])
     @cars = @search.result(distinct: true).includes(:images)
   end

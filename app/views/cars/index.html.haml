@@ -1,0 +1,12 @@
+.car-result
+  .car-result__box
+    .car-result__box__count
+      = "検索結果 #{@cars.count}件"
+    .car-result__box__cars
+      - @cars.each do |car|
+        .car-result__box__cars__image-box
+          = image_tag car.images[0].image_car.url
+        .car-result__box__cars__show-box
+          = car.name
+          = car.price
+          = car.capa
