@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "tops#index"
   resources :cars, only: [ :index, :new, :create ]
   resources :searches, only: [ :index ]
+  resources :users, controllers: [ registrations: 'users/registrations' ]
 end
