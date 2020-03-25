@@ -1,0 +1,37 @@
+.car-new
+  .car-new__box
+    %h1 検索情報を入力
+    .car-new__box__in
+      = search_form_for @search, url: cars_path do |f|
+        .car-new__box__in__car-text
+          %p 車名
+          = f.search_field :name_cont, placeholder: "車名を入力", class: "car-new__box__in__car-text__field"
+        .car-new__box__in__car-text
+          %p メーカー
+          = f.search_field :maker_cont, placeholder: "メーカーを入力", class: "car-new__box__in__car-text__field"
+        .car-new__box__in__car-select
+          %p 期間
+          = f.select :period_eq, [ ["1日",0], ["2~3日",1], ["4~7日",2], ["２週間",3], ["1月以上",4] ], include_blank: "期間を選択"
+        .car-new__box__in__car-select
+          %p ガソリン
+          = f.select :gas_eq, [ ["レギュラー",0], ["ハイオク",1], ["軽油",2] ], include_blank: "ガソリンを選択"
+        .car-new__box__in__car-select
+          %p タイプ
+          = f.select :type_eq, [ ["AT",0], ["MT",1] ], include_blank: "タイプを選択"
+          %p ハンドル
+          = f.select :handle_eq, [ ["右ハンドル",0], ["左ハンドル",1] ], include_blank: "ハンドルを選択"
+        .car-new__box__in__car-text
+          %p 定員
+          = f.search_field :capa_eq, placeholder: "人数を入力", class: "car-new__box__in__car-text__field"
+          = f.label :capa, "人"
+        .car-new__box__in__car-text
+          %p 都道府県
+          = f.search_field :prefecture_eq, placeholder: "都道府県を入力", class: "car-new__box__in__car-text__field"
+          %p 市区郡
+          = f.search_field :city_eq, placeholder: "市区郡を入力", class: "car-new__box__in__car-text__field"
+        .car-new__box__in__car-text
+          %p 価格
+          = f.label :price, "¥"
+          = f.search_field :price_eq, placeholder: "例)10000", class: "car-new__box__in__car-text__field"
+        .car-new__box__in__submit
+          = f.submit "投稿", class: "car-new__box__in__submit__button"
