@@ -4,7 +4,7 @@
       = "検索結果 #{@cars.count}件"
     .car-result__box__cars
       - @cars.each do |car|
-        .car-result__box__cars__car-box
+        = link_to root_path, class: "car-result__box__cars__car-box" do
           .car-result__box__cars__car-box__image-box
             = image_tag car.images[0].image_car.url
           .car-result__box__cars__car-box__show-box
@@ -13,9 +13,10 @@
                 ¥
                 = car.price
               %li
-                = car.name
-                |
-                = car.maker
+                %h1
+                  = car.name
+                  |
+                  = car.maker
             .car-result__box__cars__car-box__show-box__show
               %h1
                 = car.prefecture
@@ -23,3 +24,19 @@
               %h1
                 期間
                 = car.period
+            .car-result__box__cars__car-box__show-box__user
+              .car-result__box__cars__car-box__show-box__user__image
+                = image_tag car.user.image_user.url
+              .car-result__box__cars__car-box__show-box__user__star
+                %h1= car.user.name
+                %p ★★★★★
+            .car-result__box__cars__car-box__show-box__reviews
+              %h1 レビュー
+              - car.reviews.each do |review|
+                .car-result__box__cars__car-box__show-box__reviews__review
+                  .car-result__box__cars__car-box__show-box__reviews__review__user
+                    .car-result__box__cars__car-box__show-box__reviews__review__user__image
+                      = image_tag review.user.image_user.url
+                    %h2= review.user.name
+                  .car-result__box__cars__car-box__show-box__reviews__review__comment
+                    = review.comment
