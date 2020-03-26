@@ -1,1 +1,7 @@
-= link_to "ユーザー情報編集", edit_user_registration_path(current_user)
+.user-show
+  .user-show__box
+    .user-show__box__image
+      = image_tag @user.image_user.url
+    %h1= @user.name
+
+    = link_to "ユーザー情報編集", edit_user_registration_path(current_user)
