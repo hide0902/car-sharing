@@ -1,0 +1,19 @@
+.car-show
+  .car-show__box
+    .car-show__box__images
+      .car-show__box__images__main
+        = image_tag @image[0].image_car.url
+      .car-show__box__images__sub
+        - @image.each do |image|
+          = image_tag image.image_car.url
+    .car-show__box__price-name
+      %ul
+        %li
+          ¥
+          = @car.price
+        %li
+          %h1
+            = @car.name
+            |
+            = @car.maker
+    .car-show__box__car-show
