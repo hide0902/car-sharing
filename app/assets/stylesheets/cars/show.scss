@@ -1,0 +1,55 @@
+.car-show {
+  height: 100vh;
+  &__box {
+    width: 1000px;
+    margin: auto;
+    &__images {
+      margin-top: 50px;
+      &__main {
+        text-align: center;
+        img {
+          height: 500px;
+          width: auto;
+          
+        }
+      }
+      &__sub {
+        height: 100px;
+        width: 700px;
+        margin: auto;
+        img {
+          height: 70px;
+          width: auto;
+          margin: 15px;
+        }
+      }
+    }
+    &__price-name {
+      ul {
+        background-color:rgba(175, 168, 168, 0.8);
+        display: flex;
+        height: 60px;
+        color: white;
+        font-size: 30px;
+        li:first-child {
+          width: 50%;
+          background-color:rgba(117, 114, 114, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        li:last-child {
+          width: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
