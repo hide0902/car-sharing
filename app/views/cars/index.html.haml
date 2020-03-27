@@ -4,7 +4,7 @@
       = "検索結果 #{@cars.count}件"
     .car-result__box__cars
       - @cars.each do |car|
-        = link_to root_path, class: "car-result__box__cars__car-box" do
+        = link_to "/cars/#{car.id}", class: "car-result__box__cars__car-box" do
           .car-result__box__cars__car-box__image-box
             = image_tag car.images[0].image_car.url
           .car-result__box__cars__car-box__show-box

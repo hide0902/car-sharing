@@ -5,6 +5,11 @@ class CarsController < ApplicationController
     @cars = @search.result(distinct: true).includes(:images)
   end
 
+  def show
+    @car = Car.find(params[:id])
+    @image = @car.images
+  end
+
   def new
     @car = Car.new
     @car.images.new
