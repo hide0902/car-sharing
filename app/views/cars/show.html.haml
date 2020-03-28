@@ -36,6 +36,12 @@
             定員
             = @car.capa
             人
+    .car-show__box__place
+      .car-show__box__place__title
+        受け渡し場所：
+      %h1
+        = @car.prefecture
+        = @car.city
     .car-show__box__review-box
       %h1 レビュー
       - @review.each do |review|
