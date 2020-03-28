@@ -36,3 +36,13 @@
             定員
             = @car.capa
             人
+    .car-show__box__review-box
+      %h1 レビュー
+      - @review.each do |review|
+        .car-show__box__review-box__review
+          .car-show__box__review-box__review__user
+            .car-show__box__review-box__review__user__image
+              = image_tag review.user.image_user.url
+            %h2= review.user.name
+          .car-show__box__review-box__review__comment
+            = review.comment
