@@ -17,3 +17,22 @@
             |
             = @car.maker
     .car-show__box__car-show
+      = link_to "リクエスト", root_path, class: "car-show__box__car-show__request"
+      .car-show__box__car-show__show-box
+        .car-show__box__car-show__show-box__user
+          .car-show__box__car-show__show-box__user__image
+            = image_tag @car.user.image_user.url
+          .car-show__box__car-show__show-box__user__name
+            %h1= @car.user.name
+            %p ★★★★★
+        .car-show__box__car-show__show-box__car
+          %h1
+            期間
+            = @car.period
+          %h1= @car.gas
+          %h1= @car.type
+          %h1= @car.handle
+          %h1
+            定員
+            = @car.capa
+            人
