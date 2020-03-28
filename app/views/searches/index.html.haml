@@ -13,8 +13,8 @@
           %p 期間
           = f.select :period_eq, [ ["1日",0], ["2~3日",1], ["4~7日",2], ["２週間",3], ["1月以上",4] ], include_blank: "期間を選択"
         .car-new__box__in__car-select
-          %p ガソリン
-          = f.select :gas_eq, [ ["レギュラー",0], ["ハイオク",1], ["軽油",2] ], include_blank: "ガソリンを選択"
+          %p 燃料
+          = f.select :gas_eq, [ ["レギュラー",0], ["ハイオク",1], ["軽油",2], ["ハイブリッド",3], ["電気自動車",4] ], include_blank: "ガソリンを選択"
         .car-new__box__in__car-select
           %p タイプ
           = f.select :type_eq, [ ["AT",0], ["MT",1] ], include_blank: "タイプを選択"
