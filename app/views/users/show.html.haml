@@ -3,5 +3,39 @@
     .user-show__box__image
       = image_tag @user.image_user.url
     %h1= @user.name
-
+    .user-show__box__cars
+      - @cars.each do |car|
+        = link_to "/cars/#{car.id}", class: "user-show__box__cars__car-box" do
+          .user-show__box__cars__car-box__image
+            = image_tag car.images[0].image_car.url
+          .user-show__box__cars__car-box__show-box
+            %ul
+              %li
+                ¥
+                = car.price
+              %li
+                %h1
+                  = car.name
+                  |
+                  = car.maker
+            .user-show__box__cars__car-box__show-box__show
+              %h1
+                = car.prefecture
+                = car.city
+              %h1
+                期間
+                = car.period
+            .user-show__box__cars__car-box__show-box__star
+              %p ★★★★★
+            .user-show__box__cars__car-box__show-box__review-box
+              %h1 レビュー
+              - car.reviews.each do |review|
+                .user-show__box__cars__car-box__show-box__review-box__review
+                  .user-show__box__cars__car-box__show-box__review-box__review__user
+                    .user-show__box__cars__car-box__show-box__review-box__review__user__image
+                      = image_tag review.user.image_user.url
+                    %h2= review.user.name
+                  .user-show__box__cars__car-box__show-box__review-box__review__comment
+                    = review.comment
     = link_to "ユーザー情報編集", edit_user_registration_path(current_user)
+  

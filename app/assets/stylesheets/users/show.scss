@@ -1,5 +1,5 @@
 .user-show {
-  height: 100vh;
+  
   &__box {
     &__image {
       
@@ -15,6 +15,97 @@
     }
     h1 {
 
+    }
+    &__cars {
+      &__car-box {
+        display: flex;
+        width: 1000px;
+        margin: auto;
+        margin-bottom: 40px;
+        padding: 1px 0 ;
+        text-decoration: none;
+        color: black;
+        &:hover{
+          opacity: 0.6;
+        }
+        &__image {
+          img {
+            width: 300px;
+            height: auto;
+            border-radius: 20px;
+          }
+        }
+        &__show-box {
+          ul {
+            background-color:rgba(175, 168, 168, 0.8);
+            display: flex;
+            height: 30px;
+            color: white;
+            li:first-child {
+              width: 120px;
+              background-color:rgba(117, 114, 114, 0.8);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            li:last-child {
+              width: 580px;
+              display: flex;
+                align-items: center;
+              h1 {
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+              }
+            }
+          }
+          &__show {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+            h1:first-child {
+              margin-right: 20px;
+            }
+          }
+          &__star {
+            margin-left: 30px;
+          }
+          &__review-box {
+            margin: 10px 0 0 20px;
+            border: 1px solid rgb(184, 183, 183);
+            padding: 8px;
+            h1 {
+              text-align: center;
+              margin-bottom: 13px;
+            }
+            &__review {
+              display: flex;
+              margin-bottom: 10px;
+              border-bottom: 1px dotted rgb(184, 183, 183);
+              &__user {
+                display: flex;
+                width: 180px;
+                &__image {
+                  img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                      -moz-border-radius: 50%;
+                      -webkit-border-radius: 50%;
+                      object-fit: cover; /* ADD */
+                  }
+                }
+                h2 {
+                  margin-left: 10px;
+                }
+              }
+              &__comment {
+                width: 450px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
