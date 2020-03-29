@@ -52,17 +52,24 @@
             %h2= review.user.name
           .car-show__box__review-box__review__comment
             = review.comment
-.fixed_btn
-  = form_with(model: [@car,@request], local: true, class: "message-content__form") do |f|
-    %h2
-      = f.text_field :start_rent
-    %h2
-      = f.text_field :end_rent
-    %h2
-      = f.text_field :place
-    %h2
-      = f.text_field :tel
-    %h2
-      = f.text_area :text
-    %h2
-      = f.submit
+.request
+  %h1 リクエスト送信
+  = form_with(model: [@car,@request], local: true ) do |f|
+    .request__box
+      .request__box__text
+        %h2 開始
+        = f.text_field :start_rent, size: "18"
+      .request__box__text
+        %h2 終了
+        = f.text_field :end_rent, size: "18"
+      .request__box__text
+        %h2 行先
+        = f.text_field :place, size: "18"
+      .request__box__text
+        %h2 電話番号
+        = f.text_field :tel, size: "18"
+      .request__box__text
+        %h2 コメント
+        = f.text_area :text, size: "17x5"
+      .request__box__submit
+        = f.submit "送信", class: "request__box__submit__button"

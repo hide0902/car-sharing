@@ -159,22 +159,35 @@
     }
   }
 }
-.fixed_btn{
-  h1 {
-    color: #fff;
-    display: block;
-    font-size: 18px;
-    text-decoration: none;
-    margin-bottom: 5px;
-
-  }
+.request {
   width: 170px;
-  height: 300px;
-  background: #3CCACE;
-  text-align: center;
-  border-radius: 4%;
-  top: 100px;
+  height: 490px;
+  background-color: #5ba1c9;
+  top: 120px;
   left: 10px;
   position: fixed;
   padding: 15px;
+  color: white;
+  h1 {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 20px;
+  }
+  &__box {
+    &__text {
+      padding-bottom: 10px;
+    }
+    &__submit {
+      text-align: center;
+      &__button {
+        width: 170px;
+        height: 30px;
+        background-color: #26a7f1;
+        color: white;
+        &:hover {
+          background-color: #6dc1f1;
+        }
+      }
+    }
+  }
 }
