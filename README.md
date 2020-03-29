@@ -13,6 +13,7 @@
 - has_many :cars, dependent: :destroy
 - has_many :reviews, dependent: :destroy
 - has_many :likes, dependent: :destroy
+- has_many :requests, dependent: :destroy
 
 ## carsテーブル
 |Column|Type|Options|
@@ -33,6 +34,7 @@
 - has_many :images, dependent: :destroy
 - has_many :reviews, dependent: :destroy
 - has_many :likes, dependent: :destroy
+- has_many :requests, dependent: :destroy
 
 ## imagesテーブル
 |Column|Type|Options|
@@ -58,6 +60,21 @@
 |------|----|-------|
 |car_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user, optional: true
+- belongs_to :car, optional: true
+
+## requestsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|car_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|start_rent|string||
+|end_rent|string||
+|place|string||
+|text|text||
+|tel|string||
+|name|string||
 ### Association
 - belongs_to :user, optional: true
 - belongs_to :car, optional: true
