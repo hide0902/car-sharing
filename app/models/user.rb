@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :cars, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :requests, dependent: :destroy
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

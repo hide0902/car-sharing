@@ -52,3 +52,17 @@
             %h2= review.user.name
           .car-show__box__review-box__review__comment
             = review.comment
+.fixed_btn
+  = form_with(model: [@car,@request], local: true, class: "message-content__form") do |f|
+    %h2
+      = f.text_field :start_rent
+    %h2
+      = f.text_field :end_rent
+    %h2
+      = f.text_field :place
+    %h2
+      = f.text_field :tel
+    %h2
+      = f.text_area :text
+    %h2
+      = f.submit
