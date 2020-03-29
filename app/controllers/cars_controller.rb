@@ -9,6 +9,7 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @image = @car.images
     @review = @car.reviews
+    @request = Request.new
   end
 
   def new
