@@ -37,5 +37,27 @@
                     %h2= review.user.name
                   .user-show__box__cars__car-box__show-box__review-box__review__comment
                     = review.comment
+            .user-show__box__cars__car-box__show-box__requests
+              %h3 リクエスト
+              - car.requests.each do |request|
+                .user-show__box__cars__car-box__show-box__requests__request
+                  .user-show__box__cars__car-box__show-box__requests__request__user
+                    .user-show__box__cars__car-box__show-box__requests__request__user__image
+                      = image_tag request.user.image_user.url
+                    .user-show__box__cars__car-box__show-box__requests__request__user__name
+                      %h2= request.user.name
+                      %p= request.tel
+                  .user-show__box__cars__car-box__show-box__requests__request__show
+                    .user-show__box__cars__car-box__show-box__requests__request__show__box
+                      %h1 期間：
+                      %h1= request.start_rent
+                      %h2 ~
+                      %h1= request.end_rent
+                    .user-show__box__cars__car-box__show-box__requests__request__show__box
+                      %h1 行先：
+                      %h1= request.place
+                    .user-show__box__cars__car-box__show-box__requests__request__show__box
+                      %h1 コメント：
+                      %h1= request.text
     = link_to "ユーザー情報編集", edit_user_registration_path(current_user)
   
