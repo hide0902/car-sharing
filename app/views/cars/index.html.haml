@@ -31,7 +31,6 @@
                 %h1= car.user.name
                 %p ★★★★★
             .car-result__box__cars__car-box__show-box__reviews
-              %h1 レビュー
               - car.reviews.each do |review|
                 .car-result__box__cars__car-box__show-box__reviews__review
                   .car-result__box__cars__car-box__show-box__reviews__review__user
@@ -40,3 +39,7 @@
                     %h2= review.user.name
                   .car-result__box__cars__car-box__show-box__reviews__review__comment
                     = review.comment
+              - if car.reviews.count == 0
+                %h1 レビューがありません
+              - else
+                %h1= "他全#{car.reviews.count}件のレビュー"
