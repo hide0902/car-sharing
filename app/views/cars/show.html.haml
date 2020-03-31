@@ -49,7 +49,7 @@
         = @car.prefecture
         = @car.city
     .car-show__box__review-box
-      %h1 レビュー
+      %h1= "レビュー#{@review.count}件"
       - @review.each do |review|
         .car-show__box__review-box__review
           .car-show__box__review-box__review__user
