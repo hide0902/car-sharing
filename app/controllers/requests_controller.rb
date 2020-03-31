@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   def create
     request = Request.create(request_params)
     @car = Car.find(params[:car_id])
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 
   private

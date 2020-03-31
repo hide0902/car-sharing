@@ -55,7 +55,7 @@
       align-items: center;
       height: 120px;
       border-bottom: 1px dotted rgb(184, 183, 183);
-      &__request {
+      &__like {
         height: 100px;
         width: 200px;
         border: 1px solid rgb(184, 183, 183);
@@ -124,36 +124,63 @@
         margin: auto;
         padding-top: 20px;
         padding-bottom: 30px;
-      h1 {
-        text-align: center;
-        margin-bottom: 13px;
-      }
-      &__review {
-        display: flex;
-        margin-bottom: 10px;
-        border-bottom: 1px dotted rgb(184, 183, 183);
-        &__user {
+      &__box {
+        height: 400px;
+        border: 1px solid rgb(184, 183, 183);
+        padding: 15px;
+        overflow: scroll;
+        h1 {
+          text-align: center;
+          margin-bottom: 13px;
+        }
+        &__review {
           display: flex;
-          align-items: center;
-          width: 180px;
-          &__image {
-            img {
-              width: 50px;
-              height: 50px;
-              border-radius: 50%;
-                -moz-border-radius: 50%;
-                -webkit-border-radius: 50%;
-                object-fit: cover; /* ADD */
+          margin-bottom: 20px;
+          border-bottom: 1px dotted rgb(184, 183, 183);
+          &__user {
+            display: flex;
+            align-items: center;
+            width: 180px;
+            &__image {
+              img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                  -moz-border-radius: 50%;
+                  -webkit-border-radius: 50%;
+                  object-fit: cover; /* ADD */
+              }
+            }
+            h2 {
+              margin-left: 10px;
             }
           }
-          h2 {
-            margin-left: 10px;
+          &__comment {
+            display: flex;
+            align-items: center;
+            width: 600px;
           }
         }
-        &__comment {
-          display: flex;
-          align-items: center;
-          width: 600px;
+      }
+      &__write {
+        margin-top: 10px;
+        text-align: center;
+        
+        &__submit {
+          &__button {
+          width: 250px;
+          height: 50px;
+          padding: 0 30px;
+          margin-left: 15px;
+          background-color: #38aef0;
+          color: white;
+          cursor: pointer;
+          font-size: 25px;
+          margin-bottom: 40px;
+          &:hover {
+            background-color: #6dc1f1;
+          }
+          }
         }
       }
     }

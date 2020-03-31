@@ -19,11 +19,11 @@
     .car-show__box__car-show
       - if user_signed_in?
         - if current_user.already_liked?(@car)
-          = button_to "お気に入りを外す", car_like_path(@car), method: :delete, class: "car-show__box__car-show__request"
+          = button_to "お気に入りを外す", car_like_path(@car), method: :delete, class: "car-show__box__car-show__like"
         - else
-          = button_to "お気に入り", car_likes_path(@car), method: :post, class: "car-show__box__car-show__request"
+          = button_to "お気に入り", car_likes_path(@car), method: :post, class: "car-show__box__car-show__like"
       - else
-        = link_to "お気に入り", new_user_registration_path, class: "car-show__box__car-show__request"
+        = link_to "お気に入り", new_user_registration_path, class: "car-show__box__car-show__like"
       .car-show__box__car-show__show-box
         .car-show__box__car-show__show-box__user
           .car-show__box__car-show__show-box__user__image
@@ -49,15 +49,23 @@
         = @car.prefecture
         = @car.city
     .car-show__box__review-box
-      %h1= "レビュー#{@review.count}件"
-      - @review.each do |review|
-        .car-show__box__review-box__review
-          .car-show__box__review-box__review__user
-            .car-show__box__review-box__review__user__image
-              = image_tag review.user.image_user.url
-            %h2= review.user.name
-          .car-show__box__review-box__review__comment
-            = review.comment
+      .car-show__box__review-box__box
+        %h1= "レビュー#{@reviews.count}件"
+        - @reviews.each do |review|
+          .car-show__box__review-box__box__review
+            .car-show__box__review-box__box__review__user
+              .car-show__box__review-box__box__review__user__image
+                = image_tag review.user.image_user.url
+              %h2= review.user.name
+            .car-show__box__review-box__box__review__comment
+              = review.comment
+      .car-show__box__review-box__write
+        %h1 レビューを書く
+        = form_with(model: [@car,@review], local: true ) do |f|
+          .car-show__box__review-box__write__comment
+            = f.text_area :comment, size: "80x5"
+          .car-show__box__review-box__write__submit
+            = f.submit "送信", class: "car-show__box__review-box__write__submit__button"
 .request
   %h1 リクエスト送信
   = form_with(model: [@car,@request], local: true ) do |f|

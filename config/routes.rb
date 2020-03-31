@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :cars, only: [ :index, :new, :create, :show ] do
     resources :requests, only: [ :create ]
     resources :likes, only: [:create, :destroy]
+    resources :reviews, only: [ :create ]
   end
   resources :searches, only: [ :index ]
   resources :users, controllers: [ registrations: 'users/registrations' ]
