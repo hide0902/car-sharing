@@ -17,7 +17,13 @@
             |
             = @car.maker
     .car-show__box__car-show
-      = link_to "リクエスト", root_path, class: "car-show__box__car-show__request"
+      - if user_signed_in?
+        - if current_user.already_liked?(@car)
+          = button_to "お気に入りを外す", car_like_path(@car), method: :delete, class: "car-show__box__car-show__request"
+        - else
+          = button_to "お気に入り", car_likes_path(@car), method: :post, class: "car-show__box__car-show__request"
+      - else
+        = link_to "お気に入り", new_user_registration_path, class: "car-show__box__car-show__request"
       .car-show__box__car-show__show-box
         .car-show__box__car-show__show-box__user
           .car-show__box__car-show__show-box__user__image
