@@ -8,8 +8,9 @@ class CarsController < ApplicationController
   def show
     @car = Car.find(params[:id])
     @image = @car.images
-    @review = @car.reviews
+    @reviews = @car.reviews
     @request = Request.new
+    @review = Review.new
   end
 
   def new

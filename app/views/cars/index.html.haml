@@ -31,7 +31,7 @@
                 %h1= car.user.name
                 %p ★★★★★
             .car-result__box__cars__car-box__show-box__reviews
-              - car.reviews.each do |review|
+              - car.reviews.first(2).each do |review|
                 .car-result__box__cars__car-box__show-box__reviews__review
                   .car-result__box__cars__car-box__show-box__reviews__review__user
                     .car-result__box__cars__car-box__show-box__reviews__review__user__image
