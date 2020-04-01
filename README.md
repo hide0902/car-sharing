@@ -14,6 +14,7 @@
 - has_many :reviews, dependent: :destroy
 - has_many :likes, dependent: :destroy
 - has_many :requests, dependent: :destroy
+- has_many :messages
 
 ## carsテーブル
 |Column|Type|Options|
@@ -78,3 +79,15 @@
 ### Association
 - belongs_to :user, optional: true
 - belongs_to :car, optional: true
+- has_many :messages
+
+## messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|request_id|integer|null: false, foreign_key: true|
+|comment|text||
+|image|string||
+### Association
+- belongs_to :request
+- belongs_to :user
