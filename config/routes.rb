@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     resources :reviews, only: [ :create ]
   end
-  resources :requests, only: [ :show ]
+  resources :requests, only: [ :show ] do
+    resources :messages, only: [ :create ]
+  end
   resources :searches, only: [ :index ]
   resources :users, controllers: [ registrations: 'users/registrations' ]
 end
