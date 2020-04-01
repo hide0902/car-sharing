@@ -1,4 +1,8 @@
 class RequestsController < ApplicationController
+  def show
+    @request = Request.find(params[:id])
+  end
+
   def create
     request = Request.create(request_params)
     @car = Car.find(params[:car_id])

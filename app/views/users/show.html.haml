@@ -5,7 +5,7 @@
     %h1= @user.name
     .user-show__box__cars
       - @cars.each do |car|
-        = link_to "/cars/#{car.id}", class: "user-show__box__cars__car-box" do
+        .user-show__box__cars__car-box
           .user-show__box__cars__car-box__image
             = image_tag car.images[0].image_car.url
           .user-show__box__cars__car-box__show-box
@@ -25,8 +25,10 @@
               %h1
                 期間
                 = car.period
+              
             .user-show__box__cars__car-box__show-box__star
               %p ★★★★★
+              %h1= link_to "詳細ページへ", "/cars/#{car.id}"
             .user-show__box__cars__car-box__show-box__review-box
               %h1 レビュー
               - car.reviews.each do |review|
@@ -59,5 +61,7 @@
                     .user-show__box__cars__car-box__show-box__requests__request__show__box
                       %h1 コメント：
                       %h1= request.text
+                    .user-show__box__cars__car-box__show-box__requests__request__show__box
+                      = link_to "トークへ", "/requests/#{request.id}"
     = link_to "ユーザー情報編集", edit_user_registration_path(current_user)
   
