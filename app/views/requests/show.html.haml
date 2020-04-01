@@ -1,0 +1,19 @@
+.request-show
+  .request-show__message-box
+    - @messages.each do |message|
+      - if current_user.id == message.user_id
+        .request-show__message-box__message2
+          .request-show__message-box__message2__comment
+            %h1= message.comment
+      - else
+        .request-show__message-box__message
+          .request-show__message-box__message__user
+            .request-show__message-box__message__user__image
+              = image_tag message.user.image_user.url
+            %h2= message.user.name
+          .request-show__message-box__message__comment
+            = message.comment
+  .request-show__write
+    = form_with(model: [@request,@message], local: true ) do |f|
+      = f.text_field :comment, class: "request-show__write__text"
+      = f.submit "送信", class: "request-show__write__submit"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_29_084919) do
+ActiveRecord::Schema.define(version: 2020_04_01_113447) do
 
   create_table "cars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 2020_03_29_084919) do
     t.datetime "updated_at", null: false
     t.index ["car_id"], name: "index_likes_on_car_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "request_id"
+    t.bigint "user_id"
+    t.text "comment"
+    t.string "image_request"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["request_id"], name: "index_messages_on_request_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,6 +101,8 @@ ActiveRecord::Schema.define(version: 2020_03_29_084919) do
   add_foreign_key "images", "cars"
   add_foreign_key "likes", "cars"
   add_foreign_key "likes", "users"
+  add_foreign_key "messages", "requests"
+  add_foreign_key "messages", "users"
   add_foreign_key "requests", "cars"
   add_foreign_key "requests", "users"
   add_foreign_key "reviews", "cars"

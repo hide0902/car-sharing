@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :requests, dependent: :destroy
+  has_many :messages
   has_many :liked_cars, through: :likes, source: :car
   def already_liked?(car)
     self.likes.exists?(car_id: car.id)
