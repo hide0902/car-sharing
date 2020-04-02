@@ -3,8 +3,9 @@ class Car < ApplicationRecord
   has_many :images, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :liked_users, through: :likes, source: :user
   has_many :requests, dependent: :destroy
-
+  
   accepts_nested_attributes_for :images
   self.inheritance_column = :_type_disabled
   enum period: { "1日": 0, "2~3日": 1, "4~7日": 2, "２週間": 3, "1月以上": 4 }, _prefix: true
