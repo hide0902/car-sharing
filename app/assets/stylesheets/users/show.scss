@@ -1,22 +1,43 @@
 .user-show {
   
   &__box {
-    &__image {
-      
-      
-      img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-          -moz-border-radius: 50%;
-          -webkit-border-radius: 50%;
-          object-fit: cover; /* ADD */
+    width: 1100px;
+    margin: auto;
+    &__user-show {
+      display: flex;
+      margin: auto;
+      width: 1000px;
+      align-items: center;
+      padding-top: 20px;
+      &__image {
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            object-fit: cover; /* ADD */
+        }
+      }
+      &__name {
+        margin-left: 10px;
+        h1 {
+          font-size: 30px;
+        }
       }
     }
-    h1 {
-
+    &__cars-title {
+      text-align: center;
+      font-size: 20px;
     }
     &__cars {
+      width: 1050px;
+      height: 600px;
+      margin: auto;
+      border: 1px solid rgb(184, 183, 183);
+      overflow: scroll;
+      margin-bottom: 50px;
+      padding-top: 20px;
       &__car-box {
         display: flex;
         width: 1000px;
@@ -65,6 +86,33 @@
           }
           &__star {
             margin-left: 30px;
+          }
+          &__send {
+            margin-top: 10px;
+            margin-left: 30px;
+            display: flex;
+            &__image {
+              img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                  -moz-border-radius: 50%;
+                  -webkit-border-radius: 50%;
+                  object-fit: cover; /* ADD */
+              }
+            }
+            &__name {
+              margin-left: 10px;
+            }
+            &__request {
+              margin-left: 20px;
+              &__box {
+                display: flex;
+                h2 {
+                  margin: 0 10px;
+                }
+              }
+            }
           }
           &__review-box {
             margin: 10px 0 0 20px;
@@ -140,7 +188,6 @@
                     margin: 0 10px;
                   }
                 }
-
               }
             }
           }
