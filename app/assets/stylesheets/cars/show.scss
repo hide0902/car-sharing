@@ -20,6 +20,10 @@
           height: 70px;
           width: auto;
           margin: 15px;
+          cursor: pointer;
+          &:hover{
+            opacity: 0.5;
+          }
         }
       }
     }

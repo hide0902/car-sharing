@@ -2,10 +2,10 @@
   .car-show__box
     .car-show__box__images
       .car-show__box__images__main
-        = image_tag @image[0].image_car.url
+        = image_tag @image[0].image_car.url, class: "car-show__box__images__main__image"
       .car-show__box__images__sub
         - @image.each do |image|
-          = image_tag image.image_car.url
+          = image_tag image.image_car.url, class: "car-show__box__images__sub__image"
     .car-show__box__price-name
       %ul
         %li
