@@ -13,6 +13,17 @@ class CarsController < ApplicationController
     @review = Review.new
   end
 
+  def edit
+    @car = Car.find(params[:id])
+    @image = @car.images.new
+  end
+
+  def update
+    @car = Car.find(params[:id])
+    @car.update(car_params)
+    redirect_to
+  end
+
   def new
     @car = Car.new
     @car.images.new

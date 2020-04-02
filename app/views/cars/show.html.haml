@@ -67,23 +67,28 @@
           .car-show__box__review-box__write__submit
             = f.submit "送信", class: "car-show__box__review-box__write__submit__button"
 .request
-  %h1 リクエスト送信
-  = form_with(model: [@car,@request], local: true ) do |f|
-    .request__box
-      .request__box__text
-        %h2 開始
-        = f.text_field :start_rent, size: "18"
-      .request__box__text
-        %h2 終了
-        = f.text_field :end_rent, size: "18"
-      .request__box__text
-        %h2 行先
-        = f.text_field :place, size: "18"
-      .request__box__text
-        %h2 電話番号
-        = f.text_field :tel, size: "18"
-      .request__box__text
-        %h2 コメント
-        = f.text_area :text, size: "17x5"
-      .request__box__submit
-        = f.submit "送信", class: "request__box__submit__button"
+  .request__send
+    %h1 リクエスト送信
+    = form_with(model: [@car,@request], local: true ) do |f|
+      .request__send__box
+        .request__send__box__text
+          %h2 開始
+          = f.text_field :start_rent, size: "18"
+        .request__send__box__text
+          %h2 終了
+          = f.text_field :end_rent, size: "18"
+        .request__send__box__text
+          %h2 行先
+          = f.text_field :place, size: "18"
+        .request__send__box__text
+          %h2 電話番号
+          = f.text_field :tel, size: "18"
+        .request__send__box__text
+          %h2 コメント
+          = f.text_area :text, size: "17x5"
+        .request__send__box__submit
+          = f.submit "送信", class: "request__send__box__submit__button"
+  - if current_user.id == @car.user_id
+    .request__2
+      = link_to "編集", edit_car_path, class: "request__2__btn"
+      = link_to "削除", root_path, class: "request__2__btn"

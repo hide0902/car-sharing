@@ -24,8 +24,6 @@
               %h1
                 期間
                 = car.period
-            -# - if car.likes.present?
-            -#   %h1 貸し出し中
             .car-result__box__cars__car-box__show-box__user
               .car-result__box__cars__car-box__show-box__user__image
                 = image_tag car.user.image_user.url
