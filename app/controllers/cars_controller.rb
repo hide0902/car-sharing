@@ -20,8 +20,12 @@ class CarsController < ApplicationController
 
   def update
     @car = Car.find(params[:id])
-    @car.update(car_params)
-    redirect_to
+    if @car.update(car_params)
+      redirect_to
+    else
+      @image = @car.images.new
+      render :edit
+    end
   end
 
   def new
@@ -30,9 +34,13 @@ class CarsController < ApplicationController
   end
 
   def create
-    # binding.pry
-    Car.create(car_params)
-    redirect_to root_path
+    @car = Car.create(car_params)
+    if @car.save
+      redirect_to root_path
+    else
+      @car.images.new
+      render action: :new
+    end
   end
 
   private
