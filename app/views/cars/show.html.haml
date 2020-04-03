@@ -23,7 +23,7 @@
         - else
           = button_to "お気に入り", car_likes_path(@car), method: :post, class: "car-show__box__car-show__like"
       - else
-        = link_to "お気に入り", new_user_registration_path, class: "car-show__box__car-show__like"
+        = link_to "お気に入り", new_user_session_path, class: "car-show__box__car-show__like"
       .car-show__box__car-show__show-box
         .car-show__box__car-show__show-box__user
           .car-show__box__car-show__show-box__user__image
@@ -66,29 +66,30 @@
             = f.text_area :comment, size: "80x5"
           .car-show__box__review-box__write__submit
             = f.submit "送信", class: "car-show__box__review-box__write__submit__button"
-.request
-  .request__send
-    %h1 リクエスト送信
-    = form_with(model: [@car,@request], local: true ) do |f|
-      .request__send__box
-        .request__send__box__text
-          %h2 開始
-          = f.text_field :start_rent, size: "18"
-        .request__send__box__text
-          %h2 終了
-          = f.text_field :end_rent, size: "18"
-        .request__send__box__text
-          %h2 行先
-          = f.text_field :place, size: "18"
-        .request__send__box__text
-          %h2 電話番号
-          = f.text_field :tel, size: "18"
-        .request__send__box__text
-          %h2 コメント
-          = f.text_area :text, size: "17x5"
-        .request__send__box__submit
-          = f.submit "送信", class: "request__send__box__submit__button"
-  - if current_user.id == @car.user_id
-    .request__2
-      = link_to "編集", edit_car_path, class: "request__2__btn"
-      = link_to "削除", root_path, class: "request__2__btn"
+- if user_signed_in?
+  .request
+    .request__send
+      %h1 リクエスト送信
+      = form_with(model: [@car,@request], local: true ) do |f|
+        .request__send__box
+          .request__send__box__text
+            %h2 開始
+            = f.text_field :start_rent, size: "18"
+          .request__send__box__text
+            %h2 終了
+            = f.text_field :end_rent, size: "18"
+          .request__send__box__text
+            %h2 行先
+            = f.text_field :place, size: "18"
+          .request__send__box__text
+            %h2 電話番号
+            = f.text_field :tel, size: "18"
+          .request__send__box__text
+            %h2 コメント
+            = f.text_area :text, size: "17x5"
+          .request__send__box__submit
+            = f.submit "送信", class: "request__send__box__submit__button"
+    - if user_signed_in? && current_user.id == @car.user_id
+      .request__2
+        = link_to "編集", edit_car_path, class: "request__2__btn"
+        = link_to "削除", root_path, class: "request__2__btn"

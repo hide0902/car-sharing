@@ -11,7 +11,10 @@
     .main__2__cars
       .main__2__cars__contents
         = link_to "車を探す", searches_path ,class: "main__2__cars__contents__box"
-        = link_to "車を投稿する", new_car_path ,class: "main__2__cars__contents__box"
+        - if user_signed_in?
+          = link_to "車を投稿する", new_car_path ,class: "main__2__cars__contents__box"
+        - else
+          = link_to "車を投稿する", new_user_session_path ,class: "main__2__cars__contents__box"
   .main__3
     .main__3__contents
       %h2 Car Sharingとは？
