@@ -60,12 +60,13 @@
             .car-show__box__review-box__box__review__comment
               = review.comment
       .car-show__box__review-box__write
-        %h1 レビューを書く
-        = form_with(model: [@car,@review], local: true ) do |f|
-          .car-show__box__review-box__write__comment
-            = f.text_area :comment, size: "80x5"
-          .car-show__box__review-box__write__submit
-            = f.submit "送信", class: "car-show__box__review-box__write__submit__button"
+        - if user_signed_in?
+          %h1 レビューを書く
+          = form_with(model: [@car,@review], local: true ) do |f|
+            .car-show__box__review-box__write__comment
+              = f.text_area :comment, size: "80x5"
+            .car-show__box__review-box__write__submit
+              = f.submit "送信", class: "car-show__box__review-box__write__submit__button"
 - if user_signed_in?
   .request
     .request__send
