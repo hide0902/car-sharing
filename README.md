@@ -1,5 +1,8 @@
 # Car Sharing
 
+## App URL
+http://18.180.142.54/
+
 # car-sharingのDB設計
 
 ## usersテーブル
