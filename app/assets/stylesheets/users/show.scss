@@ -86,6 +86,9 @@
           }
           &__star {
             margin-left: 30px;
+            p {
+              color: rgb(223, 223, 62);
+            }
           }
           &__send {
             margin-top: 10px;
@@ -103,6 +106,9 @@
             }
             &__name {
               margin-left: 10px;
+              p {
+                color: rgb(223, 223, 62);
+              }
             }
             &__request {
               margin-left: 20px;
