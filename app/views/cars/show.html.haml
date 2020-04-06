@@ -62,7 +62,7 @@
       .car-show__box__review-box__write
         - if user_signed_in?
           %h1 レビューを書く
-          = form_with(model: [@car,@review], local: true ) do |f|
+          = form_with(model: [@car,@review], local: true, class: "car-show__box__review-box__write__form" ) do |f|
             .car-show__box__review-box__write__comment
               = f.text_area :comment, size: "80x5"
             .car-show__box__review-box__write__submit
